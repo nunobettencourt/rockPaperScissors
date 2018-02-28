@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import DefaultReducer from './reducer_default';
+import OptionsReducer from './reducer_options';
 
 const rootReducer = combineReducers({
-    default: DefaultReducer
+    options: OptionsReducer,
 });
 
 export default rootReducer;
