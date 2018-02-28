@@ -12,6 +12,11 @@ export default function (state = INITIAL_STATE, action) {
                 ...state,
                 playerSelection: action.payload
             };
+        case types.COMPUTER_SELECTION:
+            return {
+                ...state,
+                computerSelection: action.payload
+            };
         default:
             return state;
     }
