@@ -1,5 +1,29 @@
 import * as types from './types';
 
+function getResult(userSelection, computerSelection) {
+    let result = '';
+
+    if (userSelection === computerSelection) {
+        result = 'Draw';
+    } else {
+        switch (userSelection) {
+            case 'Rock':
+                result = (computerSelection === 'Scissors') ? 'Player' : 'Computer';
+                break;
+            case 'Scissors':
+                result = (computerSelection === 'Paper') ? 'Player' : 'Computer';
+                break;
+            case 'Paper':
+                result = (computerSelection === 'Rock') ? 'Player' : 'Computer';
+                break;
+            default:
+                result = 'DRAW';
+                break;
+        }
+    }
+    return result;
+}
+
 export function newPlay(userSelection) {
     return function (dispatch, getState) {
 
@@ -15,6 +39,9 @@ export function newPlay(userSelection) {
             type: types.COMPUTER_SELECTION,
             payload: computerSelection
         });
-
+        dispatch({
+            type: types.SET_WINNER,
+            payload: getResult(userSelection, computerSelection)
+        });
     }
 }
