@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class ScoreBoard extends Component {
 
     render() {
+
+        const { scoreboard: { Player, Computer, Draw }, game: { playerSelection, computerSelection } } = this.props;
+
         return (
             <div className="score-board text-center">
                 <div className="row">
@@ -17,16 +21,22 @@ class ScoreBoard extends Component {
                                 <img className="card-img-top" src="/img/man.jpg" alt="Card image cap"/>
                                 <div className="card-body">
                                     <h5 className="card-title">Player</h5>
-                                    <p className="display-4">3</p>
-                                    <p className="card-text"><small className="text-muted">last move: Paper</small></p>
+                                    <p className="display-4">{Player}</p>
+                                    <p className="card-text">
+                                        <small className="text-muted">your move: </small>
+                                        <span className="lead">{playerSelection}</span>
+                                    </p>
                                 </div>
                             </div>
                             <div className="card">
                                 <img className="card-img-top" src="/img/man.jpg" alt="Card image cap"/>
                                 <div className="card-body">
                                     <h5 className="card-title">Computer</h5>
-                                    <p className="display-4">1</p>
-                                    <p className="card-text"><small className="text-muted">last move: Rock</small></p>
+                                    <p className="display-4">{Computer}</p>
+                                    <p className="card-text">
+                                        <small className="text-muted">your move: </small>
+                                        <span className="lead">{computerSelection}</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -38,4 +48,11 @@ class ScoreBoard extends Component {
     }
 }
 
-export default ScoreBoard;
+function mapStateToProps(state) {
+    return {
+        scoreboard: state.scoreboard,
+        game: state.game
+    }
+}
+
+export default connect(mapStateToProps)(ScoreBoard);
