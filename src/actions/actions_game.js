@@ -39,7 +39,7 @@ export function newGame(userSelection) {
             type: types.COMPUTER_SELECTION,
             payload: computerSelection
         });
-        dispatch({
+        return dispatch({
             type: types.SET_WINNER,
             payload: getResult(userSelection, computerSelection)
         });
