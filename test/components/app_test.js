@@ -16,4 +16,15 @@ describe('App' , () => {
         expect(component).to.have.class('app');
     });
 
+    describe('Child Components', () => {
+
+        it('should include "GameControls', () => {
+            expect(component.find('.game-controls')).to.exist;
+        });
+
+        it('should include "ScoreBoard', () => {
+            expect(component.find('.score-board')).to.exist;
+        });
+    })
+
 });
