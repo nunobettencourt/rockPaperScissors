@@ -1,1 +1,1 @@
-export * from './actions_default';
+export * from './actions_game';

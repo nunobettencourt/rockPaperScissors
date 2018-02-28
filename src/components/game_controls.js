@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import _ from 'lodash';
+import { playerSelection } from "../actions";
 
 class GameControls extends Component {
 
@@ -10,6 +12,7 @@ class GameControls extends Component {
                 key={option}
                 type="button"
                 className="btn btn-light"
+                onClick={this.props.playerSelection.bind(this, option)}
             >
                 <img src={`/img/${option}.png`} alt={option} />
             </button>
@@ -44,4 +47,8 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(GameControls);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ playerSelection }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GameControls);
