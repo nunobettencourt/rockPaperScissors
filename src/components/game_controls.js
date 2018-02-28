@@ -1,8 +1,25 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import _ from 'lodash';
 
 class GameControls extends Component {
 
+    renderButton(option) {
+        return (
+            <button
+                key={option}
+                type="button"
+                className="btn btn-light"
+            >
+                <img src={`/img/${option}.png`} alt={option} />
+            </button>
+        )
+    }
+
     render() {
+
+        const { options } = this.props;
+
         return (
             <div className="game-controls">
                 <div className="row">
@@ -13,9 +30,7 @@ class GameControls extends Component {
                 </div>
                 <div className="row">
                     <div className="col d-flex justify-content-around">
-                        <button>Rock</button>
-                        <button>Paper</button>
-                        <button>Scissor</button>
+                        {_.map(options, option => this.renderButton(option))}
                     </div>
                 </div>
             </div>
@@ -23,4 +38,10 @@ class GameControls extends Component {
     }
 }
 
-export default GameControls;
+function mapStateToProps(state) {
+    return {
+        options: state.options
+    }
+}
+
+export default connect(mapStateToProps)(GameControls);
