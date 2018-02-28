@@ -4,7 +4,9 @@ import React, { Component } from 'react';
 export default class App extends Component {
     render() {
         return (
-            <div>hello World</div>
+            <div className="app container jumbotron text-center">
+                hello World
+            </div>
         );
     }
 }

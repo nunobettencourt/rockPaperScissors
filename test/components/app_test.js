@@ -8,7 +8,12 @@ describe('App' , () => {
         component = renderComponent(App);
     });
 
-    it('renders something', () => {
+    it('should be rendered', () => {
         expect(component).to.exist;
     });
+
+    it('should contain the "app" class', () => {
+        expect(component).to.have.class('app');
+    });
+
 });
