@@ -1,0 +1,36 @@
+{
+  "name": "rockPaperScissors",
+  "version": "1.0.0",
+  "description": "A React and Redux take on the game Rock, Paper and Scissors",
+  "main": "index.js",
+  "repository": "git@github.com/nunobettencourt/rockPaperScissors",
+  "scripts": {
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "test": "mocha --require babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "test:watch": "npm run test -- --watch"
+  },
+  "author": "Nuno Bettencourt",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.2.1",
+    "babel-loader": "^7.1.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.1.18",
+    "chai": "^4.1.2",
+    "chai-jquery": "^2.0.0",
+    "jquery": "^3.3.1",
+    "jsdom": "^11.6.2",
+    "mocha": "^5.0.1",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.2"
+  },
+  "dependencies": {
+    "babel-preset-stage-1": "^6.1.18",
+    "lodash": "^4.17.5",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "5.0.6",
+    "redux": "^3.0.4",
+    "redux-thunk": "^2.2.0"
+  }
+}
