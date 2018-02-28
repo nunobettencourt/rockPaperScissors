@@ -14,7 +14,7 @@ class ScoreBoard extends Component {
                     <div className="col">
                         <div className="card-deck">
                             <div className="card">
-                                <img className="card-img-top" src="#" alt="Card image cap"/>
+                                <img className="card-img-top" src="/img/man.jpg" alt="Card image cap"/>
                                 <div className="card-body">
                                     <h5 className="card-title">Player</h5>
                                     <p className="display-4">3</p>
@@ -22,7 +22,7 @@ class ScoreBoard extends Component {
                                 </div>
                             </div>
                             <div className="card">
-                                <img className="card-img-top" src="#" alt="Card image cap"/>
+                                <img className="card-img-top" src="/img/man.jpg" alt="Card image cap"/>
                                 <div className="card-body">
                                     <h5 className="card-title">Computer</h5>
                                     <p className="display-4">1</p>
