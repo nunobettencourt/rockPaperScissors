@@ -1,7 +1,7 @@
 import { expect} from "../test_helper";
 import OptionsReducer from '../../src/reducers/reducer_options';
 
-describe('OptionsReducer', () => {
+describe('Options Reducer', () => {
     it('should be a function', () => {
         expect(OptionsReducer).to.be.a('function');
     });
