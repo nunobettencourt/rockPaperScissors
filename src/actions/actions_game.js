@@ -17,14 +17,14 @@ function getResult(userSelection, computerSelection) {
                 result = (computerSelection === 'Rock') ? 'Player' : 'Computer';
                 break;
             default:
-                result = 'DRAW';
+                result = 'Draw';
                 break;
         }
     }
     return result;
 }
 
-export function newPlay(userSelection) {
+export function newGame(userSelection) {
     return function (dispatch, getState) {
 
         const { options } = getState();
