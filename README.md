@@ -61,5 +61,8 @@ For example:
 I would have definitely implemented more tests, especially  concerning the game action creator and the 
 scoreboard reducer.
 
+Another thing that I would have liked to implement was a middleware to calculate the outcome of a game. So the function
+getResult wouldn't be on the action creator.
+
 
 Thank you very much for this opportunity!!
